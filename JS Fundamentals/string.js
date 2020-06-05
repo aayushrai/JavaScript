@@ -1,6 +1,6 @@
 const firstName1 = "Aayush";
 const lastName1 = "Rai";
-
+const str = "hii this is me"
 let vall;
 //concatination
 vall = firstName1 + lastName1;
@@ -31,4 +31,17 @@ vall = firstName1.lastIndexOf("a");
 
 // charAt
 vall = firstName1.charAt(4);
+
+
+//substring()
+vall = firstName1.substring(0,3);
+
+//slice()
+vall = firstName1.slice(0,4);
+vall = firstName1.slice(-3);
+
+vall = str.split(" ");
+
+//replace
+vall = str.replace("hii","hey");
 console.log(vall);
