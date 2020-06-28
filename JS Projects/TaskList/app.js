@@ -7,7 +7,7 @@ const filterInput = document.querySelector("#filter");
 loadEventListeners();
 
 function loadEventListeners() {
-    document.addEventListener("DOMContentLoaded", getTasks());
+    document.addEventListener("DOMContentLoaded", getTasks);
     form.addEventListener("submit", addTask);
     card.addEventListener("click", removeTask);
     clearBtn.addEventListener("click", removeAllTasks);
