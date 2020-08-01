@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <img id="capture_cam" src="https://upload.wikimedia.org/wikipedia/commons/7/77/Avatar_cat.png" height="500" width="500" alt="kitten">
+    <form action="" method="post" id="capture_form">
+        <!-- {% csrf_token %} -->
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        $(document).ready(function() {
+            $("#capture_cam").on("click", function(event) {
+                bounds = this.getBoundingClientRect();
+                var left = bounds.left;
+                var top = bounds.top;
+                var x = event.pageX - left;
+                var y = event.pageY - top;
+                var cw = this.clientWidth
+                var ch = this.clientHeight
+                var iw = this.naturalWidth
+                var ih = this.naturalHeight
+                var px = x / cw * iw
+                var py = y / ch * ih
+                    // console.log("click on " + this.tagName + " at pixel (" + px + "," + py + ") mouse pos (" + x + "," + y + ") relative to boundingClientRect at (" + left + "," + top + ") client image size: " + cw + " x " + ch + " natural image size: " + iw + " x " + ih);
+                const cam_form = document.getElementById("capture_form");
+                const x1 = document.createElement("input");
+                const y1 = document.createElement("input");
+                const br = document.createElement("br");
+                x1.type = "number";
+                x1.value = Number(px);
+                y1.type = "number";
+                y1.value = Number(py);
+                cam_form.appendChild(x1);
+                cam_form.appendChild(y1);
+                cam_form.appendChild(br);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
