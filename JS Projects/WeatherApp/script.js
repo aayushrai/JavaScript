@@ -16,7 +16,17 @@ const searchCity = () => {
     getWeatherData(city)
     .then((response) =>{
         console.log(response);
+        showData(response);
     }).catch((error)=>{
         console.log(error);
     })
+}
+
+const showData = (data) => {
+    document.getElementById("temp").innerHTML = data.main.temp;
+    document.getElementById("min-temp").innerHTML = data.main.temp_min;
+    document.getElementById("max-temp").innerHTML = data.main.temp_max;
+    document.getElementById("city-name").innerHTML = data.name;
+    document.getElementById("weather-type").innerHTML = data.weather[0].main;
+
 }
