@@ -8,26 +8,34 @@ const API_URL = "http://localhost:3000/posts/";
 const API_BASE_URL = "http://localhost:3000/";
 
 window.onload = () => {
-    getPost();
-    getPostId();
+    const postId = getPostId();
+    getPost(postId);
 }
 
 const getPostId = () =>{
     const currUrl = window.location.search;
     const UrlParam = new URLSearchParams(currUrl);
     const id = UrlParam.get("id");
+    return id;
 }
-const getPost = () => {
-    fetch(API_URL,{
+const getPost = (postId) => {
+    fetch(API_URL+postId,{
         method:"GET"
     }).then((req)=>{
         return req.json()
     }).then((data)=>{
-        console.log(data)
+       buildPost(data);
     })
 }
 
 const buildPost = (data) => {
+    console.log(data);
     // HINT: Convert the date number to a Date string 
+    document.querySelector("header").style.backgroundImage = `url(${API_BASE_URL}${data.post_image})`
+    document.getElementById("individual-post-title").innerHTML = data.title;
+    document.getElementById("individual-post-date").innerHTML = new Date(parseInt(data.added_date)).toDateString();
+    document.getElementById("individual-post-content").innerHTML = data.content;
+    
+    
 }
 
