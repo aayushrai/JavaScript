@@ -36,6 +36,5 @@ const buildPost = (data) => {
     document.getElementById("individual-post-date").innerHTML = new Date(parseInt(data.added_date)).toDateString();
     document.getElementById("individual-post-content").innerHTML = data.content;
     
-    
 }
 
