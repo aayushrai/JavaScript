@@ -17,7 +17,14 @@ header{
     background-position: center;
     position: relative;
 }
-.home-page header{
+.navigation a{
+border: 1px solid #004186;
+padding:5px 8px;
+border-radius: 5px;
+color: #004186;
+text-decoration: none;
+}
+.home-page header, .new-post-page header{
     background-image:url(/JS\ Projects/MyBlog/MyBlogJs/assets/banner.jpeg);
 }
 .post{
