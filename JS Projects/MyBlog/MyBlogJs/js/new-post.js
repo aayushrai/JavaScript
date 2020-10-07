@@ -15,6 +15,6 @@ const submitNewPost = () => {
        method:"POST",
        body:data
    }).then(()=>{
-    window.location.href = "index.html"
+    window.location.href = "index.html" 
    })
 }

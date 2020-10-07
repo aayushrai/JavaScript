@@ -1,12 +1,6 @@
 /* ADD styling for all of the divs in post.html to match  */
 
-.navigation a{
-border: 1px solid #004186;
-padding:5px 8px;
-border-radius: 5px;
-color: #004186;
-text-decoration: none;
-}
+
 
 #individual-post-title {
     text-align: center;
